@@ -1,5 +1,5 @@
 # Site settings
-title: BY Blog
+title: Forest Blog
 SEOTitle: 傅晓航的博客 | Forest Blog
 header-img: img/post-bg-desk.jpg
 email: 564632204@qq.com
@@ -18,13 +18,12 @@ sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's us
 
 # SNS settings
 RSS: false
-# weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
-#twitter_username:   qiubaiying
-
+# weibo_username:     
+zhihu_username:     
+github_username:    
+facebook_username:  
+jianshu_username:   
+#twitter_username:  
 
 
 
