@@ -7,8 +7,8 @@ author:     Fu Xiaohang                      # 作者
 header-img: img/post-bg-2015.jpg    #这篇文章标题背景图片
 catalog: true                       # 是否归档
 tags:                               #标签
-    - NLP
-    - 自然语言处理
+    - 编程指南
+    - 经验
 ---
 
 # 1 Java
