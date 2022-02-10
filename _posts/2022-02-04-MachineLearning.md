@@ -1,5 +1,3 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-
 ---
 layout:     post                    # 使用的布局（不需要改）
 title:      MachineLearning               # 标题 
@@ -13,6 +11,7 @@ tags:                               #标签
     - 深度学习
 ---
 
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 # 1 机器学习
 
