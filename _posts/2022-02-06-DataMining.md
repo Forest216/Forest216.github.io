@@ -11,6 +11,16 @@ tags:                               #标签
     - 大数据
 ---
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
 
 &emsp;&emsp;数据挖掘是从数据集中挖掘有价值的信息，数据采集仅仅是数据挖掘的第一步，后面还要进行数据清理和预处理，以及下面各项算法的挖掘等等。
 
