@@ -1,3 +1,16 @@
+---
+layout:     post                    # 使用的布局（不需要改）
+title:      GoogleStyleGuide               # 标题 
+subtitle:   谷歌编程风格指南 #副标题
+date:       2022-02-08              # 时间
+author:     Fu Xiaohang                      # 作者
+header-img: img/post-bg-2015.jpg    #这篇文章标题背景图片
+catalog: true                       # 是否归档
+tags:                               #标签
+    - NLP
+    - 自然语言处理
+---
+
 # 1 Java
 
 - [Google Java Style Guide](https://www.jianshu.com/p/c0e5a4a896be)
