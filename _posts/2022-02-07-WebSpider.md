@@ -1,3 +1,17 @@
+---
+layout:     post                    # 使用的布局（不需要改）
+title:      WebSpider               # 标题 
+subtitle:   爬虫 #副标题
+date:       2022-02-07              # 时间
+author:     Fu Xiaohang                      # 作者
+header-img: img/post-bg-2015.jpg    #这篇文章标题背景图片
+catalog: true                       # 是否归档
+tags:                               #标签
+    - NLP
+    - 自然语言处理
+---
+
+
 # 1 爬虫 
 
 ## 1.1 原理
@@ -74,19 +88,19 @@
 
   - 在F12开发者工具的Network中搜索任意一个商品的价格，
 
-    <img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20220101234636414.png" alt="image-20220101234636414" style="zoom: 67%;" />
+    <img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20220101234636414.png" alt="image-20220101234636414" style="zoom: 67%;" />
 
     在Filter(筛选器)中搜索上面得到的xxxx23295，
 
-    <img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20220101235336088.png" alt="image-20220101235336088" style="zoom: 50%;" />
+    <img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20220101235336088.png" alt="image-20220101235336088" style="zoom: 50%;" />
 
     返回的Json数据有多条，每条对应一个价格，并且页面中各商品价格的存放也没有一点规律，很难分析
 
   - 这时可以点进一个商品，到其商品详情页面，重复上述操作，因为每个详情页商品价格返回肯定是唯一的，并且容易分析出URL的构造方法。如下图，找到了价格，存储在`promotionPrice`下，
 
-    <img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20220101235642781.png" alt="image-20220101235642781" style="zoom:67%;" />
+    <img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20220101235642781.png" alt="image-20220101235642781" style="zoom:67%;" />
 
-    <img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20220102000133780.png" alt="image-20220102000133780" style="zoom:50%;" />
+    <img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20220102000133780.png" alt="image-20220102000133780" style="zoom:50%;" />
 
   - 接下来是分析URL是如何构造的，原始HTML为，
 
