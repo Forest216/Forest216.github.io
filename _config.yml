@@ -1,11 +1,11 @@
 # Site settings
-title: Forest Blog
+title: Fu Xiaohang
 SEOTitle: 傅晓航的博客 | Forest Blog
 header-img: img/post-bg-desk.jpg
 email: 564632204@qq.com
 #description: "Nanjing University"
 keyword: "Forest, Forest Blog, 傅晓航的博客, fuxiaohang, 傅晓航"
-url: "http://forest216.github.io"          # your host, for absolute URL
+url: "https://forest216.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/forest216/forest216.github.io.git" # you code repository
 
