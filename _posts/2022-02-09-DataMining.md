@@ -1,3 +1,17 @@
+---
+layout:     post                    # 使用的布局（不需要改）
+title:      DataMining               # 标题 
+subtitle:   数据挖掘 #副标题
+date:       2022-02-09              # 时间
+author:     Fu Xiaohang                      # 作者
+header-img: img/post-bg-2015.jpg    #这篇文章标题背景图片
+catalog: true                       # 是否归档
+tags:                               #标签
+    - 数据挖掘
+    - 大数据
+---
+
+
 &emsp;&emsp;数据挖掘是从数据集中挖掘有价值的信息，数据采集仅仅是数据挖掘的第一步，后面还要进行数据清理和预处理，以及下面各项算法的挖掘等等。
 
 # 1 数据仓库
@@ -6,11 +20,11 @@
 
 &emsp;&emsp;数据库主要侧重于日常事务的处理，如银行的交易，账号的登录等等，主要应用OLTP(联机**事务**处理)；而数据仓库侧重于对大量历史数据进行分析做出决策，主要应用OLAP(联机**分析**处理)。数据仓库的数据来源于多个数据源，只进行最开始的一次数据装载，后面进行的就是大量的查询操作了。以图书表格系统举例子，如果用数据库存储的话，其表单设计如下，
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211208201042979.png" alt="image-20211208201042979" style="zoom: 50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211208201042979.png" alt="image-20211208201042979" style="zoom: 50%;" />
 
 因为数据仓库要进行大量的查询操作，而如果像数据库这样分为多个表单，要进行大量的耗时的join操作，效率不高，因此数据仓库将表合为一个，能够进行快速的复杂的查询分析，不过会有冗余数据。
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211208202034167.png" alt="image-20211208202034167" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211208202034167.png" alt="image-20211208202034167" style="zoom:50%;" />
 
 数据仓库也不用像数据库那样考虑事务处理、恢复和并发控制等等。数据仓库是面向主题的，围绕一些主题进行数据集成和分析，如销售分析等等。**数据集市**是数据仓库的子集，数据仓库通常面向企业级宏观主题，数据集市则面向特定微观主题。
 
@@ -25,11 +39,11 @@
 
 &emsp;&emsp;当数据为三维时，其结构如下(数据值为销量)，三个维度相当于xyz轴，如季度为Q2、城市为温哥华、类型为计算的销量是952。
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211208210429566.png" alt="image-20211208210429566" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211208210429566.png" alt="image-20211208210429566" style="zoom:50%;" />
 
 当数据为4维时，就可以有多个立方体，每一个立方体代表维度supplier为一个值时的情况。
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211208211010961.png" alt="image-20211208211010961" style="zoom: 67%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211208211010961.png" alt="image-20211208211010961" style="zoom: 67%;" />
 
 OLAP操作：
 
@@ -38,19 +52,19 @@ OLAP操作：
 - 切片(slice)和切块(dice)：切片是在立方体的一个维上进行选择，如选择time="Q1"的数据；切块是在多个维上进行选择
 - 转轴(pivot)：转动数据视角
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211208214251661.png" alt="image-20211208214251661" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211208214251661.png" alt="image-20211208214251661" style="zoom:67%;" />
 
 ### 1.3.2 星形模式
 
 &emsp;&emsp;包括一个大的中心表(事实表)和一组小的附属表(维表)，每维一个。
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211208215333921.png" alt="image-20211208215333921" style="zoom: 67%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211208215333921.png" alt="image-20211208215333921" style="zoom: 67%;" />
 
 ### 1.3.3 雪花型模式
 
 &emsp;&emsp;在星形模式的基础上，把数据进一步分解到附属表中。
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211208215539851.png" alt="image-20211208215539851" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211208215539851.png" alt="image-20211208215539851" style="zoom:67%;" />
 
 # 2 聚类
 
@@ -58,23 +72,23 @@ OLAP操作：
 
 &emsp;&emsp;聚类的数据结构主要有两种，一是数据矩阵，其中每一行代表一个样本，每一列代表一种属性，
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211206104552743.png" alt="image-20211206104552743" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211206104552743.png" alt="image-20211206104552743" style="zoom:50%;" />
 
 二是相异度矩阵，代表的是两个样本之间的相似性度量d(i,j)，
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211206104836148.png" alt="image-20211206104836148" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211206104836148.png" alt="image-20211206104836148" style="zoom:50%;" />
 
 &emsp;&emsp;数据标准化，对于一个样本x<sub>f</sub>，计算其平均绝对偏差，
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211206105300686.png" alt="image-20211206105300686" style="zoom: 67%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211206105300686.png" alt="image-20211206105300686" style="zoom: 67%;" />
 
 其中，
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211206105325962.png" alt="image-20211206105325962" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211206105325962.png" alt="image-20211206105325962" style="zoom:67%;" />
 
 也可以计算其标准偏差，
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211206105433584.png" alt="image-20211206105433584" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211206105433584.png" alt="image-20211206105433584" style="zoom:67%;" />
 
 ## 2.1 相似性度量
 
@@ -82,7 +96,7 @@ OLAP操作：
 
 ### 2.1.1 Minkowski(闵可夫斯基距离)
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211205001703203.png" alt="image-20211205001703203" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211205001703203.png" alt="image-20211205001703203" style="zoom:67%;" />
 
 &emsp;&emsp;x和y是两个p维的点，外面要开q次根。
 
@@ -90,13 +104,13 @@ OLAP操作：
 
 &emsp;&emsp;闵可夫斯基距离中q=1，得到曼哈顿距离，
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211205001733590.png" alt="image-20211205001733590" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211205001733590.png" alt="image-20211205001733590" style="zoom:67%;" />
 
 ### 2.1.3 Euclidean(欧几里得距离)
 
 &emsp;&emsp;闵可夫斯基距离中q=2，得到欧几里得距离，又称欧式距离，
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211205001821133.png" alt="image-20211205001821133" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211205001821133.png" alt="image-20211205001821133" style="zoom:67%;" />
 
 ### 2.1.4 簇间的相似性度量
 
@@ -106,7 +120,7 @@ OLAP操作：
 $$
 d_{min}(Ci,Cj)=min(|p−q|) {\quad} p∈Ci,q∈Cj
 $$
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211205002422476.png" alt="image-20211205002422476" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211205002422476.png" alt="image-20211205002422476" style="zoom:50%;" />
 
 - 最大距离
 
@@ -114,19 +128,19 @@ $$
 $$
 d_{max}(Ci,Cj)=max(|p−q|) {\quad} p∈Ci,q∈Cj
 $$
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211205002547030.png" alt="image-20211205002547030" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211205002547030.png" alt="image-20211205002547030" style="zoom:50%;" />
 
 - 均值距离
 
 两个簇内先找平均节点，对平均节点求距离。
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211205002801037.png" alt="image-20211205002801037" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211205002801037.png" alt="image-20211205002801037" style="zoom:50%;" />
 
 - 平均距离
 
 两个簇所有节点间的距离的平均值。
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211205003243033.png" alt="image-20211205003243033" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211205003243033.png" alt="image-20211205003243033" style="zoom:50%;" />
 
 ## 2.2 基于划分的聚类
 
@@ -158,7 +172,7 @@ $$
 
 ## 2.3 基于层次的聚类
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211204235720905.png" alt="image-20211204235720905" style="zoom: 50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211204235720905.png" alt="image-20211204235720905" style="zoom: 50%;" />
 
 ### 2.3.1 AGNES
 
@@ -194,7 +208,7 @@ https://www.cnblogs.com/pinard/p/6179132.html
 
 &emsp;&emsp;这类算法不是根据元素与类之间的距离进行相似性判定，而是根据元素分布的密度进行划分，因此不存在基于距离判定文本相似性所造成的过多依赖文本分布形状的不足。如下图，K-Means会造成右图这样的聚类。
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211206113452521.png" alt="image-20211206113452521" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211206113452521.png" alt="image-20211206113452521" style="zoom:67%;" />
 
 &emsp;&emsp;基于密度的聚类，其判定依据是如果某个区域中点的密度大于设定的阈值，则将该点归属到与之相邻的聚类中。缺点是对设定的扫描半径及最小包含点数极其敏感，这两个参数的细微变动都会对聚类效果造成很大的影响，而这两个参数的选择没有规律可循。
 
@@ -202,7 +216,7 @@ https://www.cnblogs.com/pinard/p/6179132.html
 
 &emsp;&emsp;设样本集D={x1,x2,...,xm}，
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211206122223664.png" alt="image-20211206122223664" style="zoom:33%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211206122223664.png" alt="image-20211206122223664" style="zoom:33%;" />
 
 - Eps：邻域的最大半径，对于样本xi，只有d(xi,xj)≤Eps的样本xj才属于xi的邻域，图中圆圈代表邻域
 - MinPts：邻域中样本个数的最小值，对于样本xi，当其邻域中样本的个数≥MinPts时，xi称为**核心对象**(红点)
@@ -226,7 +240,7 @@ DBSCAN的思想就是将密度相连的样本聚为一类。算法步骤为：�
 
 ### 3.1.1 Apriori
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211206192906600.png" alt="image-20211206192906600" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211206192906600.png" alt="image-20211206192906600" style="zoom:50%;" />
 
 &emsp;&emsp;**任何非频繁项集的超集也一定是非频繁的**，可以利用这一点进行剪枝，所有非频繁项集的超集都不用进行测试。如上图所示，设支持度阈值为50%，共4组数据，即至少出现2次。首先搜索出1项集及对应的支持度C1，剪枝去掉低于支持度阙值的1项集，得到频繁1项集L1；然后用L1进行连接得到2项集C2，并进行剪枝，得到频繁2项集L2；以此类推，迭代下去，直到无法找到频繁k+1项集为止；最终得到L3{2 3 5}。
 
@@ -238,7 +252,7 @@ DBSCAN的思想就是将密度相连的样本聚为一类。算法步骤为：�
 
 &emsp;&emsp;首先要建立项头表，其中记录了频繁1项集出现的次数，按照次数降序排列。第一次扫描数据集就是建立项头表，第二次扫描数据集，是将读到的原始数据剔除非频繁1项集，并按照支持度降序排列。
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211206210124725.png" alt="image-20211206210124725" style="zoom: 33%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211206210124725.png" alt="image-20211206210124725" style="zoom: 33%;" />
 
 
 
@@ -246,27 +260,27 @@ DBSCAN的思想就是将密度相连的样本聚为一类。算法步骤为：�
 
 &emsp;&emsp;随后就要建立FP-Tree，一条条读入排序后的数据集，插入FP树，插入时按照排序后的顺序，插入FP树中，排序靠前的节点是祖先节点，而靠后的是子孙节点。如果有共用的祖先，则对应的公用祖先节点计数加1。插入后，如果有新节点出现，则项头表对应的节点会通过**节点链表**链接上新节点。直到所有的数据都插入到FP树后，FP树的建立完成。
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211206210502857.png" alt="image-20211206210502857" style="zoom: 25%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211206210502857.png" alt="image-20211206210502857" style="zoom: 25%;" />
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211206210539704.png" alt="image-20211206210539704" style="zoom:25%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211206210539704.png" alt="image-20211206210539704" style="zoom:25%;" />
 
 
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211206210605873.png" alt="image-20211206210605873" style="zoom:25%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211206210605873.png" alt="image-20211206210605873" style="zoom:25%;" />
 
 
 
 最终得到，
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211206210642897.png" alt="image-20211206210642897" style="zoom:25%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211206210642897.png" alt="image-20211206210642897" style="zoom:25%;" />
 
 &emsp;&emsp;最后就是挖掘最大频繁k项集，要从项头表的底部向上逐个进行，即先F然后D，最后A。对每一项，要找其条件模式基，所谓条件模式基是以该项作为叶子节点所对应的FP子树，得到这个FP子树，我们将子树中每个节点的的计数设置为叶子节点的计数(计数主要是为了删除)之和，叶子节点的初始值是原始FP-Tree中的值而不是1，并删除计数低于支持度阈值的节点。从这个条件模式基，我们就可以递归挖掘得到频繁项集了。
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211206211131853.png" alt="image-20211206211131853" style="zoom:25%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211206211131853.png" alt="image-20211206211131853" style="zoom:25%;" />
 
 &emsp;&emsp;对F来说，其FP子树的叶子节点就是F，各项都设计数为2，均不低于阈值，则F对应的最大频繁集为5项集{A C E B F}。
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211206211458909.png" alt="image-20211206211458909" style="zoom:25%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211206211458909.png" alt="image-20211206211458909" style="zoom:25%;" />
 
 &emsp;&emsp;对D，得到如上子树，E和G的叶子节点为均为1个D:1，计数设为1，A和C的叶子节点均为2个D:1，计数设为2，则删掉计数低于阈值的E和G，得到{A C D}，当前节点D要保留。**找叶子节点设计数的时候要注意图中的虚线和实线，虚线是节点链表，实线才连到叶子节点。**还要注意两个分支可以合并的情况。
 
@@ -276,7 +290,7 @@ DBSCAN的思想就是将密度相连的样本聚为一类。算法步骤为：�
 
 ## 3.2 生成关联规则
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211206193624056.png" alt="image-20211206193624056" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211206193624056.png" alt="image-20211206193624056" style="zoom:50%;" />
 
 &emsp;&emsp;对找到的每个频繁项集，生成其所有的非空子集，计算置信度，如上图所示，若置信度阈值为70%，则只有第2、3、6个规则可以作为最终的输出。
 
@@ -286,7 +300,7 @@ DBSCAN的思想就是将密度相连的样本聚为一类。算法步骤为：�
 
 &ensp;&ensp;  PageRank是由Google发明的用于对网页重要性进行排序的算法。该算法基于两个假设，一是一个网页接收到的其他网页指向的入链(in)越多，说明该网页越重要；二是当一个质量高的网页指向(out)一个网页，说明这个被指向的网页质量也高。
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211128103556556.png" alt="image-20211128103556556" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211128103556556.png" alt="image-20211128103556556" style="zoom:67%;" />
 
 最原始的计算公式为，
 $$
@@ -298,7 +312,7 @@ PR(A)=M*V
 $$
 M是马尔科夫矩阵，是根据边的连接情况构成的，V是上一次的PageRank的向量。
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211128105326979.png" alt="image-20211128105326979" style="zoom: 50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211128105326979.png" alt="image-20211128105326979" style="zoom: 50%;" />
 
 然而，这会出现Spider Traps问题，当某个页面含有闭环，即自己指向自己时，经过多次循环，其PR值会归为1，而其他网页归为0，因此对公式进行修正，
 $$
