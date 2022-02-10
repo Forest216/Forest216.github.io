@@ -1,4 +1,15 @@
-[TOC]
+---
+layout:     post                    # 使用的布局（不需要改）
+title:      MachineLearning               # 标题 
+subtitle:   机器学习和深度学习 #副标题
+date:       2022-02-04              # 时间
+author:     Fu Xiaohang                      # 作者
+header-img: img/post-bg-2015.jpg    #这篇文章标题背景图片
+catalog: true                       # 是否归档
+tags:                               #标签
+    - 机器学习
+    - 深度学习
+---
 
 # 1 机器学习
 
@@ -20,7 +31,7 @@ P(类别|特征)=\frac{P(特征|类别)P(类别)}{P(特征)}
 $$
 左边直接求是不好求的，但是右边三个都能直接求，
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211206160631622.png" alt="image-20211206160631622" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211206160631622.png" alt="image-20211206160631622" style="zoom:50%;" />
 
 已知某男生的四个特征分别是不帅，性格不好，身高矮，不上进，要求女生嫁的概率，
 
@@ -67,7 +78,7 @@ $$
 
 &emsp;&emsp;决策树是一个树结构，每一个非叶节点表示一个对一个特征的测试，该节点的分支代表这个特征在某个值域上的输出，叶子节点代表一个输出类别。某个特征可能出现在多个非叶节点中。如下图所示，使用决策树进行决策的过程就是从根节点开始，测试待分类项中相应的特征，并按照其值选择输出分支，直到到达叶子节点，将叶子节点存放的类别作为决策结果。
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211206140012659.png" alt="image-20211206140012659" style="zoom: 50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211206140012659.png" alt="image-20211206140012659" style="zoom: 50%;" />
 
 决策树构建，关键在于每一层选择哪一个特征，选择的原则是使分支中尽可能是同一个类别，即纯度更高，判断纯度的方法有ID3算法和C4.5算法。
 
@@ -75,7 +86,7 @@ $$
 
 &emsp;&emsp;用信息增益作为纯度的度量，信息增益=信息熵-条件熵，信息熵代表随机变量的复杂度，条件熵代表在某一个条件下，随机变量的复杂度。
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211206141603732.png" alt="image-20211206141603732" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211206141603732.png" alt="image-20211206141603732" style="zoom:50%;" />
 
 设当前样本集合D中第k类样本所占比例为p<sub>k</sub>，则D的信息熵定义为，
 $$
@@ -124,7 +135,7 @@ Gain(D,色泽)=Ent(D)-I(色泽)=0.998-0.889=0.109
 
 同理，可以计算其他特征的信息增益，选择最大的作为当前节点的特征，然后进行划分，继续计算选择。
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211206143948531.png" alt="image-20211206143948531" style="zoom: 50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211206143948531.png" alt="image-20211206143948531" style="zoom: 50%;" />
 
 #### 1.1.5.2 C4.5
 
@@ -368,7 +379,7 @@ $$
 
 &emsp;&emsp;例如，Otto Group Product分类挑战赛的第一名通过对30个模型做stacking赢得了冠军，他将30个模型的输出作为特征，继续在三个模型中训练，这三个模型XGBoost，Neural Network和Adaboost，最后再加权平均，详见文章[Otto Group Product Classification Challenge](https://www.kaggle.com/c/otto-group-product-classification-challenge/discussion/14335)。
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20220104164235304.png" alt="image-20220104164235304" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20220104164235304.png" alt="image-20220104164235304" style="zoom:50%;" />
 
 ## 1.8 强化学习
 
@@ -488,23 +499,23 @@ df[['signer_O','signer_L']] 获取指定的列
 ### 2.1.1 感知机
 &emsp;&emsp;感知机通过一些二进制的输入x1，x2，...，代表不的影响决策的因素，然后产生一个二进制的输出：
 
-<img src="https://img-blog.csdnimg.cn/20201201230055461.png" alt="img" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/20201201230055461.png" alt="img" style="zoom:67%;" />
 
 &emsp;&emsp;用权重w1，w2...来表示各个输入对输出的重要性。神经元的输出，要么是0要么是1，由权重和w1x1+w2x2+w3x3+...的值是否小于或者大于某一阈值b来确定。感知机网络如下，左侧为输入层；中间为隐藏层,隐藏层的**每一个**感知机都通过权衡第一层的输出结果作为输入，这样以来第二层的感知机可以比第一层做出更加复杂和抽象的决策，更复杂的决策可以在第三层做出；右侧为输出层,输出层的维度为分类的类别个数。
 
-<img src="https://img-blog.csdnimg.cn/20201201232043114.png" alt="img" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/20201201232043114.png" alt="img" style="zoom:67%;" />
 
 ### 2.1.2 激活层
 &emsp;&emsp;一系列线性方程的运算最终都可以用一个线性方程表示，也就是说，多个式子联立后可以用一个线性方程表达。因此就算网络深度加到100层，也依然是这样，这样的话神经网络就失去了意义。因此利用激活函数将结果非线性化,激活函数常用的有3种,分别是阶跃函数、Sigmoid和ReLU,如下
 
-<img src="https://img-blog.csdnimg.cn/20201201233339254.jpg" alt="20201201233339254.jpg (892×294)" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/20201201233339254.jpg" alt="20201201233339254.jpg (892×294)" style="zoom:67%;" />
 
 &emsp;&emsp;此外，感知机的输入输出也不再限制为0或1，而是0～1之间均可。
 
 ### 2.1.3 交叉熵损失loss
 &emsp;&emsp;首先要利用Softmax层将输出层的结果正规化（和为1），计算公式如下：
 
-<img src="https://img-blog.csdnimg.cn/20201201235505371.png" alt="20201201235505371.png (124×90)" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/20201201235505371.png" alt="20201201235505371.png (124×90)" style="zoom:67%;" />
 
 &emsp;&emsp;最后，我们利用“交叉熵损失”来判断输出的好坏，是对Softmax层结果取对数的负数得到的，
 
@@ -521,7 +532,7 @@ $$
 ### 2.1.5 一个完整的BP神经网络
 &emsp;&emsp;以知乎的[神经网络15分钟入门！使用python从零开始写一个两层神经网络](https://zhuanlan.zhihu.com/p/67682601)坐标系分类为例，
 
-<img src="https://img-blog.csdnimg.cn/2020120212204929.jpg" alt="img" style="zoom: 50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/2020120212204929.jpg" alt="img" style="zoom: 50%;" />
 
  - 输入层X为N行2列的矩阵，N为测试组数，2代表横纵2个坐标，如果输入是20×20的图像，那么输入层就是N行400列的矩阵
  - 第一层权重矩阵W1为2行50列，每一列有2个数，分别是与两个坐标相乘的权值，50列代表输出到50个感知机
@@ -558,21 +569,21 @@ $$
 
 &emsp;&emsp;卷积层主要是用卷积核对图像进行扫描，例如一幅4x4的图像，用两个2x2的卷积核Filter1和Filter2扫描，最终得到(4-2+1)\*(4-2+1)\*2即3x3x2的输出，有多少卷积核就输出多少通道。例如对Filter1的输出，左上角的1=1*1+0\*(-1)+1\*1+1\*(-1)。如果是三通道(channel)的彩色图像，也是将三个通道求和，依然得到3x3x2的输出。
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211218123057206.png" alt="image-20211218123057206" style="zoom: 50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211218123057206.png" alt="image-20211218123057206" style="zoom: 50%;" />
 
 每一个卷积核都可以被看做特征识别器，可以识别直线、曲线、简单的颜色等等，如下图的卷积核可以识别右边的曲线，
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211218124314768.png" alt="image-20211218124314768" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211218124314768.png" alt="image-20211218124314768" style="zoom:50%;" />
 
 如果原始图像中有类似的曲线，与该卷积核相乘后，得到的值很大，因为矩阵相同位置都有数值，
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211218124419119.png" alt="image-20211218124419119" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211218124419119.png" alt="image-20211218124419119" style="zoom:50%;" />
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211218124539670.png" alt="image-20211218124539670" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211218124539670.png" alt="image-20211218124539670" style="zoom:50%;" />
 
 而如果没有，则得到的数会很小甚至是0，因为数值都与0相乘了，
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211218124631485.png" alt="image-20211218124631485" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211218124631485.png" alt="image-20211218124631485" style="zoom:50%;" />
 
 可以用多个卷积核识别不同类型的曲线。然后通过增加卷积层，可以识别更高层次的特征，如半圆(曲线和边的组合)或者矩形(四条边的组合)，进一步，爪子、手或耳朵，最后，就能完整地识别手写字、动物等等。
 
@@ -610,11 +621,11 @@ The Apple is a great company！(苹果真是一家很棒的公司！)
 
 &emsp;&emsp;RNN的结构如下，
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211202113549947.png" alt="image-20211202113549947" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211202113549947.png" alt="image-20211202113549947" style="zoom:50%;" />
 
 如果去掉了W<sub>h</sub>，其架构就与BP神经网络一样，x→W<sub>i</sub>→h→W<sub>o</sub>→y，x是输入层，h是隐藏层，y是输出层，W<sub>u</sub>、W<sub>v</sub>是输入输出的权重矩阵，如果加上W<sub>h</sub>，按照时间线展开，就是，
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211202113613845.png" alt="image-20211202113613845" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211202113613845.png" alt="image-20211202113613845" style="zoom:67%;" />
 
 x代表的是不同时刻的输入，比如上面的I like eating apple，x<sub>t-1</sub>就是I的特征向量，x<sub>t</sub>是like的特征向量，x<sub>t+1</sub>是eating的特征向量；W<sub>h</sub>是每个时间点之间的权重矩阵，是不变的；RNN之所以可以解决序列问题，是因为它可以记住每一时刻的信息，每一时刻的隐藏层h<sub>t</sub>不仅由该时刻的输入层x<sub>t</sub>决定，还由上一时刻的隐藏层h<sub>t-1</sub>决定，即隐藏层能够记住之前时刻的信息
 $$
@@ -630,7 +641,7 @@ $$
 
 &emsp;&emsp;LSTM有一个结构Memory Cell，用于存储每一时刻的信息，类似于基础版中的隐藏层h<sub>t</sub>，其结构如下，
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211202100408096.png" alt="image-20211202100408096" style="zoom: 50%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211202100408096.png" alt="image-20211202100408096" style="zoom: 50%;" />
 
 共有三个门控制信息流动。
 
@@ -642,7 +653,7 @@ $$
 
 &emsp;&emsp;在LSTM中，有两个传递状态，一是c<sub>t</sub>，即上面的MemoryCell，二是隐藏层状态h<sub>t</sub>，
 
-<img src="C:\Users\Forest\AppData\Roaming\Typora\typora-user-images\image-20211202105232106.png" alt="image-20211202105232106" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/Forest216/cloud-image/main/image-20211202105232106.png" alt="image-20211202105232106" style="zoom:67%;" />
 
 图中⊙代表矩阵点乘(对应元素相乘)，⊕代表矩阵相加。z<sub>i</sub>、z<sub>o</sub>、z<sub>f</sub>这三个门控信号是由当前输入x<sub>t</sub>和上一个状态传下来的h<sub>t-1</sub>拼接后，再与对应的权重矩阵W点乘，再经过激活函数得到的，
 $$
